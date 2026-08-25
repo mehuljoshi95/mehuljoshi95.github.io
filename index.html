@@ -1,631 +1,1563 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Journey Portfolio</title>
+  <meta charset="UTF-8">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>
+    Mehul Joshi | Senior Full Stack Engineer
+  </title>
 
-  <style>
+  <meta
+    name="description"
+    content="Mehul Joshi is a Senior Full Stack Engineer and Technical Lead with 10 years of experience building scalable SaaS products, enterprise applications, microservices, cloud systems and AI-powered engineering tools."
+  >
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta
+    name="keywords"
+    content="Mehul Joshi, Senior Full Stack Engineer, Full Stack Developer, React Developer, Node.js Developer, Angular Developer, Next.js Developer, AWS Developer, Software Engineer, Technical Lead, Gandhinagar"
+  >
 
-    html {
-      scroll-behavior: smooth;
-    }
+  <meta name="author" content="Mehul Joshi">
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #050816;
-      color: white;
-      overflow-x: hidden;
-    }
+  <meta name="robots" content="index, follow">
 
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
+  <meta
+    name="theme-color"
+    content="#05070d"
+  >
 
-    ::-webkit-scrollbar-thumb {
-      background: #915EFF;
-      border-radius: 20px;
-    }
+  <!-- Canonical -->
+  <link
+    rel="canonical"
+    href="https://mehuljoshi95.github.io/"
+  >
 
-    #progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 4px;
-      background: linear-gradient(to right, #00C2FF, #915EFF);
-      z-index: 9999;
-    }
+  <!-- Open Graph -->
+  <meta
+    property="og:type"
+    content="website"
+  >
 
-    section {
-      min-height: 100vh;
-      padding: 80px 8%;
-      position: relative;
-    }
+  <meta
+    property="og:title"
+    content="Mehul Joshi | Senior Full Stack Engineer"
+  >
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      background:
-        radial-gradient(circle at top left, rgba(145,94,255,0.25), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(0,194,255,0.15), transparent 30%),
-        #050816;
-    }
+  <meta
+    property="og:description"
+    content="Senior Full Stack Engineer specializing in scalable SaaS products, enterprise applications, cloud systems, microservices and AI-powered engineering."
+  >
 
-    .hero h1 {
-      font-size: 6rem;
-      font-family: 'Space Grotesk', sans-serif;
-      line-height: 1;
-      margin-bottom: 20px;
-    }
+  <!-- <meta
+    property="og:image"
+    content="https://YOUR-DOMAIN.com/uploads/profile-img.webp"
+  > -->
 
-    .hero h1 span {
-      color: #915EFF;
-    }
+  <meta
+    property="og:url"
+    content="https://mehuljoshi95.github.io/"
+  >
 
-    .hero p {
-      font-size: 1.4rem;
-      max-width: 700px;
-      color: #cfcfcf;
-      line-height: 1.8;
-    }
+  <meta
+    property="og:site_name"
+    content="Mehul Joshi"
+  >
 
-    .scroll-down {
-      margin-top: 50px;
-      color: #00C2FF;
-      letter-spacing: 4px;
-      animation: bounce 1.5s infinite;
-    }
+  <!-- Twitter / X -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
 
-    @keyframes bounce {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
+  <meta
+    name="twitter:title"
+    content="Mehul Joshi | Senior Full Stack Engineer"
+  >
 
-    .section-title {
-      font-size: 3rem;
-      margin-bottom: 80px;
-      font-family: 'Space Grotesk', sans-serif;
-    }
+  <meta
+    name="twitter:description"
+    content="Senior Full Stack Engineer building scalable software, enterprise platforms and high-performance systems."
+  >
 
-    .timeline {
-      position: relative;
-      margin-left: 30px;
-      border-left: 2px solid rgba(255,255,255,0.15);
-    }
+  <!-- <meta
+    name="twitter:image"
+    content="https://YOUR-DOMAIN.com/uploads/profile-img.webp"
+  > -->
 
-    .timeline-card {
-      position: relative;
-      margin-bottom: 80px;
-      padding-left: 40px;
-      opacity: 0;
-      transform: translateY(100px);
-    }
+  <!-- Preload only the most important image -->
+  <link
+    rel="preload"
+    as="image"
+    href="/uploads/profile-img.webp"
+    fetchpriority="high"
+  >
 
-    .timeline-card::before {
-      content: '';
-      position: absolute;
-      left: -10px;
-      top: 10px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: #915EFF;
-      box-shadow: 0 0 20px #915EFF;
-    }
+  <!--
+    Person structured data.
+    Replace YOUR-DOMAIN.com with your real domain.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mehul Joshi",
+    "jobTitle": "Senior Full Stack Engineer",
+    "description": "Senior Full Stack Engineer and Technical Lead with 10 years of experience building scalable SaaS products, enterprise applications, cloud systems, microservices and AI-powered engineering tools.",
+    "url": "https://YOUR-DOMAIN.com/",
+    "image": "https://YOUR-DOMAIN.com/uploads/profile-img.webp",
+    "email": "mailto:joshimehul1995@gmail.com",
+    "telephone": "+918128753696",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gandhinagar",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/mehul-joshi-61a59275"
+    ],
+    "knowsAbout": [
+      "React.js",
+      "Next.js",
+      "Angular",
+      "Node.js",
+      "Express.js",
+      "PHP",
+      "Laravel",
+      "React Native",
+      "AWS",
+      "Docker",
+      "Microservices",
+      "System Design",
+      "API Design",
+      "Performance Optimization",
+      "Artificial Intelligence"
+    ]
+  }
+  </script>
 
-    .timeline-year {
-      color: #00C2FF;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-      letter-spacing: 3px;
-    }
-
-    .timeline-title {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .timeline-description {
-      color: #cfcfcf;
-      line-height: 1.8;
-      max-width: 700px;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .skill-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 20px;
-      padding: 30px;
-      transition: 0.3s;
-      backdrop-filter: blur(10px);
-    }
-
-    .skill-card:hover {
-      transform: translateY(-10px);
-      border-color: #915EFF;
-      box-shadow: 0 0 40px rgba(145,94,255,0.3);
-    }
-
-    .skill-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
-    }
-
-    .skill-card p {
-      color: #bcbcbc;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .project-card {
-      background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      padding: 35px;
-      border-radius: 25px;
-      transition: 0.4s;
-      border: 1px solid rgba(255,255,255,0.06);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      background: rgba(145,94,255,0.15);
-      border-radius: 50%;
-      top: -80px;
-      right: -80px;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      border-color: #00C2FF;
-    }
-
-    .project-card h3 {
-      font-size: 1.7rem;
-      margin-bottom: 15px;
-    }
-
-    .project-card p {
-      color: #cfcfcf;
-      line-height: 1.7;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .tech-stack span {
-      background: rgba(145,94,255,0.15);
-      color: #d8c8ff;
-      padding: 8px 14px;
-      border-radius: 100px;
-      font-size: 0.9rem;
-    }
-
-    .terminal {
-      background: #0d1117;
-      border-radius: 20px;
-      padding: 40px;
-      border: 1px solid rgba(255,255,255,0.08);
-      font-family: monospace;
-      line-height: 2;
-      font-size: 1.1rem;
-    }
-
-    .terminal .green {
-      color: #00ff88;
-    }
-
-    .terminal .blue {
-      color: #00C2FF;
-    }
-
-    .ending {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: black;
-    }
-
-    .ending h2 {
-      font-size: 4rem;
-      max-width: 900px;
-      line-height: 1.4;
-      font-family: 'Space Grotesk', sans-serif;
-    }
-
-    .ending h2 span {
-      color: #915EFF;
-    }
-
-    .floating-glow {
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(145,94,255,0.2), transparent 70%);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-    }
-
-    @media(max-width: 768px) {
-
-      .hero h1 {
-        font-size: 3.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .section-title {
-        font-size: 2rem;
-      }
-
-      .timeline-title {
-        font-size: 1.4rem;
-      }
-
-      .ending h2 {
-        font-size: 2rem;
-      }
-
-    }
-
-  </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
+
+
 <body>
 
-  <div id="progress-bar"></div>
-  <div class="floating-glow"></div>
+  <!-- ===================================================
+       HEADER
+  =================================================== -->
 
-  <section class="hero" id="hero"></section>
+  <header class="site-header">
 
-  <section>
-    <h2 class="section-title">My Journey</h2>
-    <div class="timeline" id="timeline"></div>
-  </section>
+    <nav
+      class="nav"
+      aria-label="Primary navigation"
+    >
 
-  <section>
-    <h2 class="section-title">Skills Evolution</h2>
-    <div class="skills-grid" id="skills"></div>
-  </section>
+      <a
+        href="#home"
+        class="logo"
+        aria-label="Mehul Joshi home"
+      >
+        MJ
+      </a>
 
-  <section>
-    <h2 class="section-title">Projects</h2>
-    <div class="projects" id="projects"></div>
-  </section>
+      <div class="nav-links">
 
-  <section>
-    <h2 class="section-title">Terminal</h2>
-    <div class="terminal" id="terminal"></div>
-  </section>
+        <a href="#about">About</a>
 
-  <section class="ending">
-    <h2>
-      From <span>confusion</span><br>
-      to <span>confidence</span>.<br><br>
-      And this is only the beginning.
-    </h2>
-  </section>
+        <a href="#skills">Skills</a>
 
-  <script>
+        <a href="#journey">Journey</a>
 
-    const portfolioData = {
+        <a href="#experience">Experience</a>
 
-      hero: {
-        name: 'Mehul Joshi',
-        title: 'Full Stack Developer',
-        tagline: 'From struggling student to building enterprise applications used by real businesses.'
-      },
+        <a href="#projects">Projects</a>
 
-      journey: [
-        {
-          year: '2012',
-          title: 'The Confused Student',
-          description: 'Academics were difficult for me. I had no clarity about my future and no confidence in myself.'
-        },
-        {
-          year: '2015',
-          title: 'First Time Seeing Code',
-          description: 'Programming looked impossible initially. But curiosity slowly became obsession.'
-        },
-        {
-          year: '2018',
-          title: 'Started Building Projects',
-          description: 'I began creating real-world applications and understood the power of solving problems through software.'
-        },
-        {
-          year: '2021',
-          title: 'Professional Developer',
-          description: 'Built scalable ERP systems, desktop applications, invoice automation, and enterprise solutions.'
-        },
-        {
-          year: '2026',
-          title: 'Still Growing',
-          description: 'Now focused on architecture, performance optimization, clean systems, and advanced user experiences.'
-        }
-      ],
+        <a
+          href="#contact"
+          class="nav-contact"
+        >
+          Let's Talk
+        </a>
 
-      skills: [
-        {
-          name: 'Frontend',
-          description: 'Angular, React.js, jQuery, HTML5, CSS3'
-        },
-        {
-          name: 'Backend',
-          description: 'Node.js, Express.js, REST APIs'
-        },
-        {
-          name: 'Database',
-          description: 'MongoDB, MySQL'
-        },
-        {
-          name: 'Desktop Apps',
-          description: 'Electron.js cross-platform applications'
-        },
-        {
-          name: 'Architecture',
-          description: 'Performance optimization and scalable systems'
-        },
-        {
-          name: 'UI/UX',
-          description: 'Animated interfaces and modern experiences'
-        }
-      ],
+      </div>
 
-      projects: [
-        {
-          title: 'ERP System',
-          description: 'Enterprise-grade management software handling inventory, accounting, invoicing, barcode systems, and reporting.',
-          stack: ['Angular', 'Node.js', 'MongoDB']
-        },
-        {
-          title: 'Desktop Automation App',
-          description: 'Electron-based desktop software with offline printing, PDF generation, email automation, and hardware integration.',
-          stack: ['Electron', 'Node.js', 'SQLite']
-        },
-        {
-          title: 'Invoice Engine',
-          description: 'Dynamic invoice generation system with GST calculations, PDF exports, thermal printing, and mail integration.',
-          stack: ['Node.js', 'HTML', 'jQuery']
-        }
-      ]
+    </nav>
 
-    };
+  </header>
 
-    function renderHero() {
 
-      $('#hero').html(`
-        <h1>
-          ${portfolioData.hero.name.split(' ')[0]}
-          <span>${portfolioData.hero.name.split(' ')[1]}</span>
-        </h1>
+  <main>
 
-        <p>
-          ${portfolioData.hero.tagline}
-        </p>
+    <!-- =================================================
+         HERO
+    ================================================== -->
 
-        <div class="scroll-down">
-          SCROLL TO EXPLORE
+    <section
+      class="hero"
+      id="home"
+      aria-labelledby="hero-title"
+    >
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+
+            <span
+              class="status-dot"
+              aria-hidden="true"
+            ></span>
+
+            SENIOR FULL STACK ENGINEER
+
+          </div>
+
+
+          <h1 id="hero-title">
+            Mehul Joshi
+          </h1>
+
+
+          <p class="hero-description">
+
+            I build
+            <strong>
+              scalable software, enterprise platforms
+              and high-performance systems
+            </strong>
+            that solve real business problems.
+
+            <br><br>
+
+            10 years of turning ideas into
+            production-ready applications —
+            from PHP systems to microservices,
+            cloud infrastructure and AI-powered
+            engineering tools.
+
+          </p>
+
+
+          <div class="hero-actions">
+
+            <!-- <a
+              href="mailto:joshimehul1995@gmail.com"
+              class="btn btn-primary"
+            >
+              Let's Work Together →
+            </a> -->
+
+            <a
+              href="https://www.linkedin.com/in/mehul-joshi-61a59275"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-secondary"
+            >
+              LinkedIn ↗
+            </a>
+
+          </div>
+
         </div>
-      `);
-    }
 
-    function renderJourney() {
 
-      portfolioData.journey.forEach(item => {
+        <div class="hero-photo">
 
-        $('#timeline').append(`
-          <div class="timeline-card">
+          <div class="photo-frame">
 
-            <div class="timeline-year">
-              ${item.year}
-            </div>
+            <img
+              src="./uploads/profile-img.webp"
+              width="336"
+              height="416"
+              alt="Mehul Joshi, Senior Full Stack Engineer"
+              fetchpriority="high"
+              decoding="async"
+            >
 
-            <div class="timeline-title">
-              ${item.title}
-            </div>
+            <div class="photo-label">
 
-            <div class="timeline-description">
-              ${item.description}
+              Gandhinagar, India
+              <br>
+
+              Available for interesting work.
+
             </div>
 
           </div>
-        `);
 
-      });
-    }
+        </div>
 
-    function renderSkills() {
+      </div>
 
-      portfolioData.skills.forEach(skill => {
+    </section>
 
-        $('#skills').append(`
-          <div class="skill-card">
-            <h3>${skill.name}</h3>
-            <p>${skill.description}</p>
+
+    <!-- =================================================
+         METRICS
+    ================================================== -->
+
+    <section
+      class="metrics"
+      aria-label="Career metrics"
+    >
+
+      <div class="container metrics-grid">
+
+        <div class="metric">
+
+          <div class="metric-number">
+            10<span>+</span>
           </div>
-        `);
 
-      });
-    }
+          <div class="metric-label">
+            Years in<br>
+            Software Engineering
+          </div>
 
-    function renderProjects() {
+        </div>
 
-      portfolioData.projects.forEach(project => {
 
-        const stack = project.stack.map(item => `<span>${item}</span>`).join('');
+        <div class="metric">
 
-        $('#projects').append(`
-          <div class="project-card">
+          <div class="metric-number">
+            200K<span>+</span>
+          </div>
 
-            <h3>${project.title}</h3>
+          <div class="metric-label">
+            Daily backend<br>
+            requests handled
+          </div>
+
+        </div>
+
+
+        <div class="metric">
+
+          <div class="metric-number">
+            15K<span>+</span>
+          </div>
+
+          <div class="metric-label">
+            Active users supported<br>
+            by production systems
+          </div>
+
+        </div>
+
+
+        <div class="metric">
+
+          <div class="metric-number">
+            28<span>%</span>
+          </div>
+
+          <div class="metric-label">
+            Approximate API<br>
+            performance improvement
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ABOUT
+    ================================================== -->
+
+    <section
+      id="about"
+      aria-labelledby="about-title"
+    >
+
+      <div class="container">
+
+        <div class="section-kicker">
+          01 / ABOUT ME
+        </div>
+
+        <h2
+          class="section-title"
+          id="about-title"
+        >
+          More than just<br>
+          writing code.
+        </h2>
+
+
+        <div class="about-grid">
+
+          <div class="about-big">
+
+            I started my career
+            <span>in 2016.</span>
+
+            Today I design,
+            build and lead
+            <span>production systems.</span>
+
+          </div>
+
+
+          <div class="about-text">
 
             <p>
-              ${project.description}
+              I'm Mehul Joshi, a Senior Full Stack Engineer
+              and Technical Lead with 10 years of experience
+              building SaaS products, enterprise applications
+              and mobile platforms.
             </p>
 
-            <div class="tech-stack">
-              ${stack}
+            <p>
+              My engineering journey has evolved from backend
+              development to full-stack engineering, system
+              architecture, performance optimization, cloud
+              infrastructure and technical leadership.
+            </p>
+
+            <p>
+              I enjoy solving difficult engineering problems —
+              especially when scalability, performance,
+              maintainability and reliability matter.
+            </p>
+
+
+            <div class="about-pills">
+
+              <span class="pill">System Design</span>
+              <span class="pill">API Architecture</span>
+              <span class="pill">Microservices</span>
+              <span class="pill">Performance</span>
+              <span class="pill">AWS</span>
+              <span class="pill">Team Leadership</span>
+              <span class="pill">AI Engineering</span>
+
             </div>
 
           </div>
-        `);
 
-      });
-    }
+        </div>
 
-    function renderTerminal() {
+      </div>
 
-      $('#terminal').html(`
-        <div><span class="green">></span> whoami</div>
-        <div class="blue">Mehul Joshi</div>
-        <br>
+    </section>
 
-        <div><span class="green">></span> experience</div>
-        <div class="blue">9+ Years</div>
-        <br>
 
-        <div><span class="green">></span> specialty</div>
-        <div class="blue">Full Stack Development & Enterprise Applications</div>
-        <br>
+    <!-- =================================================
+         SKILLS
+    ================================================== -->
 
-        <div><span class="green">></span> status</div>
-        <div class="blue">Still learning. Still building.</div>
-      `);
-    }
+    <section
+      id="skills"
+      aria-labelledby="skills-title"
+    >
 
-    function initializeAnimations() {
+      <div class="container">
 
-      gsap.registerPlugin(ScrollTrigger);
+        <div class="section-kicker">
+          02 / TOOLBOX
+        </div>
 
-      gsap.from('.hero h1', {
-        opacity: 0,
-        y: 100,
-        duration: 1.2
-      });
+        <h2
+          class="section-title"
+          id="skills-title"
+        >
+          Engineering<br>
+          capabilities.
+        </h2>
 
-      gsap.from('.hero p', {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        delay: 0.5
-      });
+        <p class="section-subtitle">
+          A decade of experience across frontend, backend,
+          mobile, databases, cloud infrastructure,
+          architecture and AI-assisted development.
+        </p>
 
-      gsap.utils.toArray('.timeline-card').forEach(card => {
 
-        gsap.to(card, {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 80%'
-          }
-        });
+        <div class="skills-grid">
 
-      });
+          <article class="skill-card">
 
-      gsap.from('.skill-card', {
-        opacity: 0,
-        y: 50,
-        stagger: 0.2,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '#skills',
-          start: 'top 70%'
-        }
-      });
+            <div class="skill-icon">
+              ◈
+            </div>
 
-      gsap.from('.project-card', {
-        opacity: 0,
-        y: 80,
-        stagger: 0.3,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '#projects',
-          start: 'top 70%'
-        }
-      });
-    }
+            <h3>
+              Frontend Engineering
+            </h3>
 
-    function initializeProgressBar() {
+            <p>
+              Building responsive, scalable and maintainable
+              interfaces for complex business applications.
+            </p>
 
-      window.addEventListener('scroll', () => {
+            <div class="skill-tags">
+              <span>React</span>
+              <span>Next.js</span>
+              <span>Angular</span>
+              <span>Redux</span>
+              <span>TypeScript</span>
+            </div>
 
-        const scrollTop = document.documentElement.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          </article>
 
-        const progress = (scrollTop / scrollHeight) * 100;
 
-        $('#progress-bar').css('width', progress + '%');
-      });
-    }
+          <article class="skill-card">
 
-    function initializeGlowEffect() {
+            <div class="skill-icon">
+              ⌘
+            </div>
 
-      $(document).mousemove(function(e) {
+            <h3>
+              Backend Engineering
+            </h3>
 
-        $('.floating-glow').css({
-          left: e.clientX + 'px',
-          top: e.clientY + 'px'
-        });
+            <p>
+              Designing reliable APIs, services and backend
+              architectures capable of handling demanding workloads.
+            </p>
 
-      });
-    }
+            <div class="skill-tags">
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>REST</span>
+              <span>Laravel</span>
+              <span>Microservices</span>
+            </div>
 
-    $(document).ready(function() {
+          </article>
 
-      renderHero();
-      renderJourney();
-      renderSkills();
-      renderProjects();
-      renderTerminal();
 
-      initializeAnimations();
-      initializeProgressBar();
-      initializeGlowEffect();
+          <article class="skill-card">
 
-    });
+            <div class="skill-icon">
+              ◉
+            </div>
 
-  </script>
+            <h3>
+              Data & Databases
+            </h3>
+
+            <p>
+              Database design, query optimization, indexing,
+              caching and high-performance data access.
+            </p>
+
+            <div class="skill-tags">
+              <span>MySQL</span>
+              <span>MongoDB</span>
+              <span>PostgreSQL</span>
+            </div>
+
+          </article>
+
+
+          <article class="skill-card">
+
+            <div class="skill-icon">
+              ☁
+            </div>
+
+            <h3>
+              Cloud & DevOps
+            </h3>
+
+            <p>
+              Building deployment workflows and production
+              infrastructure with modern cloud tooling.
+            </p>
+
+            <div class="skill-tags">
+              <span>AWS</span>
+              <span>EC2</span>
+              <span>ECS</span>
+              <span>S3</span>
+              <span>Docker</span>
+              <span>CI/CD</span>
+            </div>
+
+          </article>
+
+
+          <article class="skill-card">
+
+            <div class="skill-icon">
+              ⌬
+            </div>
+
+            <h3>
+              Mobile Engineering
+            </h3>
+
+            <p>
+              Developing cross-platform mobile applications
+              and integrating them with scalable backend services.
+            </p>
+
+            <div class="skill-tags">
+              <span>React Native</span>
+              <span>REST APIs</span>
+            </div>
+
+          </article>
+
+
+          <article class="skill-card">
+
+            <div class="skill-icon">
+              ✦
+            </div>
+
+            <h3>
+              AI-Assisted Engineering
+            </h3>
+
+            <p>
+              Using modern AI tools to accelerate development,
+              automation, debugging and engineering productivity.
+            </p>
+
+            <div class="skill-tags">
+              <span>Copilot</span>
+              <span>ChatGPT</span>
+              <span>Codex</span>
+              <span>Gemini</span>
+              <span>Cursor</span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         JOURNEY
+    ================================================== -->
+
+    <section
+      class="journey"
+      id="journey"
+      aria-labelledby="journey-title"
+    >
+
+      <div class="container">
+
+        <div class="section-kicker">
+          03 / THE JOURNEY
+        </div>
+
+        <h2
+          class="section-title"
+          id="journey-title"
+        >
+          10 years.<br>
+          One evolving story.
+        </h2>
+
+        <p class="section-subtitle">
+          Every stage of my career changed the way I think
+          about software.
+        </p>
+
+
+        <div class="timeline">
+
+          <div
+            class="timeline-line"
+            aria-hidden="true"
+          ></div>
+
+
+          <article class="timeline-item">
+
+            <div
+              class="timeline-dot"
+              aria-hidden="true"
+            ></div>
+
+            <div class="timeline-year">
+              2016
+            </div>
+
+            <h3 class="timeline-title">
+              The Beginning
+            </h3>
+
+            <div class="timeline-description">
+              Started my professional software engineering
+              journey as a PHP Developer. Built web applications,
+              worked with MySQL and learned the fundamentals
+              of real-world software development.
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div
+              class="timeline-dot"
+              aria-hidden="true"
+            ></div>
+
+            <div class="timeline-year">
+              2018
+            </div>
+
+            <h3 class="timeline-title">
+              Becoming Full Stack
+            </h3>
+
+            <div class="timeline-description">
+              Expanded into Laravel, React, Angular, WordPress,
+              REST APIs, payment gateways and third-party
+              integrations while building commercial products.
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div
+              class="timeline-dot"
+              aria-hidden="true"
+            ></div>
+
+            <div class="timeline-year">
+              2020
+            </div>
+
+            <h3 class="timeline-title">
+              Product Engineering
+            </h3>
+
+            <div class="timeline-description">
+              Started thinking beyond individual features.
+              Focus shifted toward architecture, maintainability,
+              performance and complete product ownership.
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div
+              class="timeline-dot"
+              aria-hidden="true"
+            ></div>
+
+            <div class="timeline-year">
+              2022
+            </div>
+
+            <h3 class="timeline-title">
+              Enterprise Engineering
+            </h3>
+
+            <div class="timeline-description">
+              Joined RyDOT Infotech as a Senior Software Engineer.
+              Built web and mobile platforms using React, Angular,
+              React Native, Node.js and Express.
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div
+              class="timeline-dot"
+              aria-hidden="true"
+            ></div>
+
+            <div class="timeline-year">
+              2023–2024
+            </div>
+
+            <h3 class="timeline-title">
+              Scale & Architecture
+            </h3>
+
+            <div class="timeline-description">
+              Worked on enterprise systems handling 200K+
+              daily requests and 15K+ active users.
+              Focused heavily on database optimization,
+              caching, API performance and microservices.
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div
+              class="timeline-dot"
+              aria-hidden="true"
+            ></div>
+
+            <div class="timeline-year">
+              2025
+            </div>
+
+            <h3 class="timeline-title">
+              Leadership
+            </h3>
+
+            <div class="timeline-description">
+              Progressed into Senior Engineer and Team Lead
+              responsibilities, mentoring developers, reviewing
+              architecture and helping teams deliver production
+              software.
+            </div>
+
+          </article>
+
+
+          <article class="timeline-item">
+
+            <div
+              class="timeline-dot"
+              aria-hidden="true"
+            ></div>
+
+            <div class="timeline-year">
+              2026
+            </div>
+
+            <h3 class="timeline-title">
+              Engineering + AI
+            </h3>
+
+            <div class="timeline-description">
+              Currently focused on scalable architecture,
+              engineering leadership, automation and AI-powered
+              development workflows — including building an
+              AI-powered Jira automation agent.
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         EXPERIENCE
+    ================================================== -->
+
+    <section
+      id="experience"
+      aria-labelledby="experience-title"
+    >
+
+      <div class="container">
+
+        <div class="section-kicker">
+          04 / EXPERIENCE
+        </div>
+
+        <h2 class="section-title">
+          Where I've<br>
+          built things.
+        </h2>
+
+        <div class="experience-list">
+
+          <div class="experience">
+
+            <div class="experience-date">
+              NOV 2025 — JUL 2026
+            </div>
+
+            <div>
+
+              <div class="experience-company">
+                ULORA TECHNOLOGIES
+              </div>
+
+              <div class="experience-role">
+                Senior Software Engineer / Team Lead
+              </div>
+
+              <div class="experience-description">
+                Led a team of 3 engineers, coordinated project
+                execution, performed code reviews, managed Agile
+                workflows and designed CI/CD pipelines.
+
+                Also developed an AI-powered Jira automation
+                agent to reduce repetitive project-management work.
+              </div>
+
+              <div class="experience-tags">
+                <span>Leadership</span>
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>React.js</span>
+                <span>AI Automation</span>
+                <span>CI/CD</span>
+                <span>Jenkins</span>
+                <span>Jira</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="experience">
+
+            <div class="experience-date">
+              MAR 2022 — OCT 2025
+            </div>
+
+            <div>
+
+              <div class="experience-company">
+                RYDOT INFOTECH
+              </div>
+
+              <div class="experience-role">
+                Senior Software Engineer / Team Lead
+              </div>
+
+              <div class="experience-description">
+                Designed and developed scalable web and mobile
+                applications. Worked across React, Angular,
+                React Native, Node.js and Express while owning
+                complete software development lifecycles.
+
+                Led engineering initiatives around performance,
+                microservices, production reliability and
+                developer mentoring.
+              </div>
+
+              <div class="experience-tags">
+                <span>Leadership</span>
+                <span>React.js</span>
+                <span>Angular</span>
+                <span>Next.js</span>
+                <span>React Native</span>
+                <span>Node.js</span>
+                <span>Express.js</span>
+                <span>Microservices Architecture</span>
+                <span>Monolithic Architecture</span>
+                <span>AWS</span>
+                <span>Jira</span>
+                <span>AI Tools</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="experience">
+
+            <div class="experience-date">
+              JAN 2018 — MAR 2022
+            </div>
+
+            <div>
+
+              <div class="experience-company">
+                REPUTE INFOSYSTEMS
+              </div>
+
+              <div class="experience-role">
+                Full Stack Developer
+              </div>
+
+              <div class="experience-description">
+                Built commercial WordPress products and full-stack
+                applications using Laravel, React, Angular and MySQL.
+
+                Worked on Sociamonials, ARForms, ARMember and
+                ARPrice, including payment integrations,
+                authentication, membership systems and
+                social-media automation.
+              </div>
+
+              <div class="experience-tags">
+                <span>WordPress</span>
+                <span>PHP</span>
+                <span>Laravel</span>
+                <span>React</span>
+                <span>Angular</span>
+                <span>MySQL</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="experience">
+
+            <div class="experience-date">
+              JUN 2016 — OCT 2017
+            </div>
+
+            <div>
+
+              <div class="experience-company">
+                BINARYBITS
+              </div>
+
+              <div class="experience-role">
+                PHP Developer
+              </div>
+
+              <div class="experience-description">
+                Began my professional software engineering career.
+                Developed PHP applications, automated data
+                extraction tools and MySQL-based systems.
+              </div>
+
+              <div class="experience-tags">
+                <span>PHP</span>
+                <span>JavaScript</span>
+                <span>MySQL</span>
+                <span>Web Development</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PROJECTS
+    ================================================== -->
+
+    <section
+      id="projects"
+      aria-labelledby="projects-title"
+    >
+
+      <div class="container">
+
+        <div class="section-kicker">
+          05 / SELECTED WORK
+        </div>
+
+        <h2
+          class="section-title"
+          id="projects-title"
+        >
+          Problems I've<br>
+          helped solve.
+        </h2>
+
+        <p class="section-subtitle">
+          A selection of enterprise and commercial systems
+          I've worked on throughout my career.
+        </p>
+
+
+        <div class="projects-grid">
+
+
+          <article class="project">
+
+            <div class="project-number">
+              PROJECT / 01
+            </div>
+
+            <h3>
+              Courier ERP
+            </h3>
+
+            <p>
+              Enterprise logistics platform supporting courier
+              booking, tracking, delivery operations, reporting
+              and real-time data synchronization.
+            </p>
+
+            <div class="project-impact">
+              Impact:
+              <span>200K+ requests/day</span>
+            </div>
+
+            <div class="project-stack">
+              <span>Angular</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>Electron</span>
+              <span>mongoDB</span>
+              <span>PostgreSQL</span>
+              <span>FCM</span>
+              <span>Redis</span>
+              <span>Microservices</span>
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">
+              PROJECT / 02
+            </div>
+
+            <h3>
+              Radiant
+            </h3>
+
+            <p>
+              Real-time solar monitoring platform for collecting,
+              processing and visualizing energy-generation data
+              through dashboards and APIs.
+            </p>
+
+            <div class="project-impact">
+              Focus:
+              <span>Real-time monitoring</span>
+            </div>
+
+            <div class="project-stack">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>MQTT</span>
+              <span>REST APIs</span>
+              <span>mongoDB</span>
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">
+              PROJECT / 03
+            </div>
+
+            <h3>
+              Digital Walls
+            </h3>
+
+            <p>
+              Digital signage platform for managing dynamic
+              content distribution, scheduling, campaigns,
+              screen updates and analytics.
+            </p>
+
+            <div class="project-impact">
+              Focus:
+              <span>Scalable content delivery</span>
+            </div>
+
+            <div class="project-stack">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>REST APIs</span>
+              <span>mongoDB</span>
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">
+              PROJECT / 04
+            </div>
+
+            <h3>
+              Sociamonials
+            </h3>
+
+            <p>
+              Social-media management platform supporting
+              content scheduling, campaign management,
+              analytics, media management and automated
+              publishing workflows.
+            </p>
+
+            <div class="project-impact">
+              Focus:
+              <span>Automation & integrations</span>
+            </div>
+
+            <div class="project-stack">
+              <span>Laravel</span>
+              <span>React</span>
+              <span>MySQL</span>
+              <span>REST APIs</span>
+            </div>
+
+          </article>
+
+
+          <article class="project">
+
+            <div class="project-number">
+              PROJECT / 05
+            </div>
+
+            <h3>
+              AI Jira Automation Agent
+            </h3>
+
+            <p>
+              AI-powered engineering automation designed to
+              reduce repetitive Jira project-management tasks
+              and improve team productivity.
+            </p>
+
+            <div class="project-impact">
+              Focus:
+              <span>AI + Developer Productivity</span>
+            </div>
+
+            <div class="project-stack">
+              <span>AI</span>
+              <span>Jira</span>
+              <span>Automation</span>
+              <span>Node.js</span>
+              <span>REST APIs</span>
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         ARCHITECTURE
+    ================================================== -->
+
+    <section
+      class="architecture"
+      aria-labelledby="architecture-title"
+    >
+
+      <div class="container">
+
+        <div class="section-kicker">
+          06 / HOW I THINK
+        </div>
+
+        <h2
+          class="section-title"
+          id="architecture-title"
+        >
+          From feature<br>
+          to system.
+        </h2>
+
+        <p class="section-subtitle">
+          My approach has evolved from writing individual
+          features to thinking about complete systems.
+        </p>
+
+
+        <div class="architecture-box">
+
+          <div class="architecture-flow">
+
+            <div class="arch-node">
+              USER
+              <br><br>
+              Experience
+            </div>
+
+            <div
+              class="arch-arrow"
+              aria-hidden="true"
+            >
+              →
+            </div>
+
+            <div class="arch-node">
+              API
+              <br><br>
+              REST / Services
+            </div>
+
+            <div
+              class="arch-arrow"
+              aria-hidden="true"
+            >
+              →
+            </div>
+
+            <div class="arch-node">
+              SYSTEM
+              <br><br>
+              Microservices
+            </div>
+
+          </div>
+
+
+          <div class="architecture-flow">
+
+            <div class="arch-node">
+              DATABASE
+              <br><br>
+              MySQL / MongoDB
+            </div>
+
+            <div
+              class="arch-arrow"
+              aria-hidden="true"
+            >
+              →
+            </div>
+
+            <div class="arch-node">
+              CACHE
+              <br><br>
+              Performance
+            </div>
+
+            <div
+              class="arch-arrow"
+              aria-hidden="true"
+            >
+              →
+            </div>
+
+            <div class="arch-node">
+              CLOUD
+              <br><br>
+              AWS / Docker
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         AI ENGINEERING
+    ================================================== -->
+
+    <section
+      aria-labelledby="ai-title"
+    >
+
+      <div class="container">
+
+        <div class="section-kicker">
+          07 / AI ENGINEERING
+        </div>
+
+        <h2
+          class="section-title"
+          id="ai-title"
+        >
+          I don't use AI<br>
+          to replace engineering.
+        </h2>
+
+
+        <div class="ai-card">
+
+          <div>
+
+            <h3>
+              I use AI to amplify it.
+            </h3>
+
+            <p>
+              AI-assisted development has become part of my
+              engineering workflow — from architecture exploration
+              and code generation to debugging, testing,
+              documentation and automation.
+            </p>
+
+
+            <div class="ai-list">
+
+              <div>
+                → GitHub Copilot — development acceleration
+              </div>
+
+              <div>
+                → ChatGPT / Codex — reasoning, engineering assistance and development
+              </div>
+
+              <div>
+                → Gemini Code Assist — code analysis and development
+              </div>
+
+              <div>
+                → Cursor AI — AI-native development workflow
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="terminal">
+
+            <div>
+              <span class="green">$</span>
+              engineer --profile
+            </div>
+
+            <br>
+
+            <div>
+              experience:
+              <span class="cyan">10+ years</span>
+            </div>
+
+            <div>
+              architecture:
+              <span class="purple">scalable</span>
+            </div>
+
+            <div>
+              performance:
+              <span class="cyan">optimized</span>
+            </div>
+
+            <div>
+              leadership:
+              <span class="green">active</span>
+            </div>
+
+            <div>
+              ai:
+              <span class="purple">enabled</span>
+            </div>
+
+            <br>
+
+            <div>
+              status:
+              <span class="green">still building...</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
+
+    <section
+      class="contact"
+      id="contact"
+      aria-labelledby="contact-title"
+    >
+
+      <div class="container contact-inner">
+
+        <div class="section-kicker">
+          08 / LET'S CONNECT
+        </div>
+
+        <h2 id="contact-title">
+          Have an interesting<br>
+          <span>problem to solve?</span>
+        </h2>
+
+        <p>
+          Whether you're building a SaaS product, scaling an
+          existing platform, solving a difficult engineering
+          problem, or looking for a senior engineer to join
+          your team — let's talk.
+        </p>
+
+
+        <div class="contact-links">
+
+          <a
+            class="btn btn-primary"
+            href="mailto:joshimehul1995@gmail.com"
+          >
+            joshimehul1995@gmail.com
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="tel:+918128753696"
+          >
+            +91-8128753696
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://www.linkedin.com/in/mehul-joshi-61a59275"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =================================================
+       FOOTER
+  ================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div>
+        © 2026 Mehul Joshi
+      </div>
+
+      <div>
+        Senior Full Stack Engineer · Gandhinagar, India
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
