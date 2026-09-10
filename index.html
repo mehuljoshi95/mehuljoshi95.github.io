@@ -142,6 +142,8 @@
   </script>
 
   <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+
 </head>
 
 
@@ -1559,5 +1561,142 @@
 
   </footer>
 
+    <!-- =================================================
+       AI PORTFOLIO ASSISTANT
+  ================================================== -->
+
+  <button
+    class="ai-chat-trigger"
+    id="aiChatTrigger"
+    type="button"
+    aria-label="Open Mehul's AI portfolio assistant"
+    aria-expanded="false"
+  >
+    <span class="ai-chat-trigger-icon">✦</span>
+    <span class="ai-chat-trigger-text">Ask MJ's AI</span>
+  </button>
+
+
+  <section
+    class="ai-chat-window"
+    id="aiChatWindow"
+    aria-label="Mehul's AI portfolio assistant"
+    aria-hidden="true"
+  >
+
+    <div class="ai-chat-header">
+
+      <div class="ai-chat-header-info">
+
+        <div class="ai-chat-avatar">
+          MJ
+        </div>
+
+        <div>
+
+          <div class="ai-chat-title">
+            MJ's AI
+          </div>
+
+          <div class="ai-chat-status">
+            <span class="ai-chat-status-dot"></span>
+            Portfolio assistant
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="ai-chat-close"
+        id="aiChatClose"
+        type="button"
+        aria-label="Close AI assistant"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="ai-chat-messages"
+      id="aiChatMessages"
+      aria-live="polite"
+    >
+
+      <div class="ai-chat-message ai-chat-message-ai">
+
+        <div class="ai-chat-message-label">
+          MJ's AI
+        </div>
+
+        <div class="ai-chat-message-content">
+          Hi! I'm MJ's portfolio assistant.
+          Ask me about his experience, skills,
+          projects, architecture or engineering journey.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="ai-chat-suggestions">
+
+      <button
+        type="button"
+        class="ai-chat-suggestion"
+        data-question="Who is Mehul Joshi?"
+      >
+        Who is Mehul?
+      </button>
+
+      <button
+        type="button"
+        class="ai-chat-suggestion"
+        data-question="Tell me about Mehul's technical experience."
+      >
+        Technical experience
+      </button>
+
+      <button
+        type="button"
+        class="ai-chat-suggestion"
+        data-question="Tell me about the Courier ERP project."
+      >
+        Courier ERP
+      </button>
+
+    </div>
+
+
+    <form
+      class="ai-chat-input-area"
+      id="aiChatForm"
+    >
+
+      <input
+        type="text"
+        id="aiChatInput"
+        class="ai-chat-input"
+        placeholder="Ask about Mehul..."
+        autocomplete="off"
+        maxlength="1000"
+        aria-label="Ask Mehul's AI a question"
+      >
+
+      <button
+        type="submit"
+        class="ai-chat-send"
+        aria-label="Send message"
+      >
+        →
+      </button>
+
+    </form>
+
+  </section>
 </body>
 </html>
