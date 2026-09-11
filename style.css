@@ -1569,6 +1569,7 @@
 ===================================================== */
 
 .ai-chat-window {
+  padding: 0;
   position: fixed;
 
   right: 24px;
@@ -1602,7 +1603,7 @@
       rgba(139,92,246,.12),
       transparent 35%
     ),
-    #080a11;
+    rgba(65, 43, 114, .85);
 
   box-shadow:
     0 25px 80px rgba(0,0,0,.65),
@@ -1654,7 +1655,7 @@
 
   border-bottom: 1px solid var(--border);
 
-  background: rgba(5,7,13,.8);
+  background: rgba(65, 43, 114, .2);
 }
 
 .ai-chat-header-info {
@@ -1708,7 +1709,7 @@
 
   margin-top: 2px;
 
-  color: var(--muted);
+  color: #cdd3df;
 
   font-family: var(--font-mono);
 
@@ -1773,6 +1774,8 @@
   padding: 18px;
 
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(85 57 149 / 80%) rgba(65, 43, 114, 0);
 }
 
 .ai-chat-message {
@@ -1784,7 +1787,7 @@
 .ai-chat-message-label {
   margin-bottom: 5px;
 
-  color: #737c8e;
+  color: #a9b6d0;
 
   font-family: var(--font-mono);
 
@@ -1808,7 +1811,7 @@
 
   line-height: 1.65;
 
-  white-space: pre-wrap;
+  white-space: normal;
 }
 
 .ai-chat-message-ai {
@@ -1902,7 +1905,7 @@
 
   border-top: 1px solid var(--border);
 
-  background: rgba(5,7,13,.9);
+  background: rgba(65, 43, 114, 0.2);
 }
 
 .ai-chat-input {
@@ -1932,7 +1935,7 @@
 }
 
 .ai-chat-input::placeholder {
-  color: #687182;
+  color: #8591a5;
 }
 
 .ai-chat-input:focus {

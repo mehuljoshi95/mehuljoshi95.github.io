@@ -86,7 +86,7 @@
 
     if (sender === "ai") {
       messageWrapper.innerHTML = `
-        <div class="ai-chat-message-label">Mehul's AI</div>
+        <div class="ai-chat-message-label">MJ's AI</div>
         <div class="ai-chat-message-content"></div>
       `;
 
