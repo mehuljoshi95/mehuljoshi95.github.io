@@ -3,8 +3,8 @@
   // AI PORTFOLIO ASSISTANT
   // =================================================
 
-  const AI_BACKEND_URL = "http://localhost:5001/api";
-  // const AI_BACKEND_URL = "https://mjapps.work.gd/ai/api";
+  // const AI_BACKEND_URL = "http://localhost:5001/api";
+  const AI_BACKEND_URL = "https://mjapps.work.gd/ai/api";
 
   const aiChatTrigger = document.getElementById("aiChatTrigger");
   const aiChatWindow = document.getElementById("aiChatWindow");
