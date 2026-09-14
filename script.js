@@ -3,8 +3,8 @@
   // AI PORTFOLIO ASSISTANT
   // =================================================
 
-  // const AI_BACKEND_URL = "http://localhost:5001/api";
-  const AI_BACKEND_URL = "https://mjapps.work.gd/ai/api";
+  const AI_BACKEND_URL = "http://localhost:5001/api";
+  // const AI_BACKEND_URL = "https://mjapps.work.gd/ai/api";
 
   const aiChatTrigger = document.getElementById("aiChatTrigger");
   const aiChatWindow = document.getElementById("aiChatWindow");
@@ -90,14 +90,23 @@
         <div class="ai-chat-message-content"></div>
       `;
 
-      messageWrapper.querySelector(
+      const contentElement = messageWrapper.querySelector(
         ".ai-chat-message-content"
-      ).textContent = message;
+      );
+
+      // Render Gemini Markdown as HTML
+      // contentElement.innerHTML = marked.parse(message);
+      contentElement.innerHTML = DOMPurify.sanitize(
+        marked.parse(message)
+      );
+
+
     } else {
       messageWrapper.innerHTML = `
         <div class="ai-chat-message-content"></div>
       `;
 
+      // User messages should remain plain text
       messageWrapper.querySelector(
         ".ai-chat-message-content"
       ).textContent = message;
@@ -107,6 +116,7 @@
 
     scrollChatToBottom();
   }
+
 
 
   // =================================================
@@ -125,7 +135,7 @@
     loadingMessage.id = "aiChatLoading";
 
     loadingMessage.innerHTML = `
-      <div class="ai-chat-message-label">Mehul's AI</div>
+      <div class="ai-chat-message-label">MJ's AI</div>
       <div class="ai-chat-message-content">
         <span>Thinking</span>
         <span class="ai-chat-loading-dots">...</span>
